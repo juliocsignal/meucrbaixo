@@ -140,10 +140,18 @@ class minhaApp_tk(tkinter.Tk):
 
     def setOnClickListener(self):
 
-        AdmSI1 = float(self.entryAdmSI1.get())
-        AdmSI2 = float(self.entryAdmSI2.get())
-        AdmSI3 = float(self.entryAdmSI3.get())
-        AdmSIMed = (AdmSI1 + AdmSI2 + AdmSI3) / 3
+        AdmSI1 = str(self.entryAdmSI1.get())
+        AdmSI2 = str(self.entryAdmSI2.get())
+        AdmSI3 = str(self.entryAdmSI3.get())
+
+        if (AdmSI3 == "f" and AdmSI2 != "f"):
+            AdmSIMed = (float(AdmSI1) + float(AdmSI2)) / 2
+
+        elif (AdmSI3 == "f" and AdmSI2 == "f" ):
+            AdmSIMed = float(AdmSI1)
+
+        else:
+            AdmSIMed = (float(AdmSI1) + float(AdmSI2) + float(AdmSI3)) / 3
 
         self.entryAdmSIMed.delete(0, tkinter.END)
         self.entryAdmSIMed.insert(0, str(AdmSIMed))
@@ -152,39 +160,75 @@ class minhaApp_tk(tkinter.Tk):
         AdmEst2 = str(self.entryAdmEst2.get())
         AdmEst3 = str(self.entryAdmEst3.get())
 
-        AdmEstMed = (float(AdmEst1) + float(AdmEst2) + float(AdmEst3)) / 3
+        if (AdmEst3 == "f" and AdmEst2 != "f"):
+            AdmEstMed = (float(AdmEst1) + float(AdmEst2))/2
+
+        elif (AdmEst3 == "f" and AdmEst2 == "f"):
+            AdmEstMed = float(AdmEst1)
+
+        else:
+            AdmEstMed = (float(AdmEst1) + float(AdmEst2) + float(AdmEst3)) / 3
 
         self.entryAdmEstMed.delete(0,tkinter.END)
         self.entryAdmEstMed.insert(0, str(AdmEstMed))
 
-        Calc1 = float(self.entryCalc1.get())
-        Calc2 = float(self.entryCalc2.get())
-        Calc3 = float(self.entryCalc3.get())
-        CalcMed = (Calc1 + Calc2 + Calc3) / 3
+        Calc1 = str(self.entryCalc1.get())
+        Calc2 = str(self.entryCalc2.get())
+        Calc3 = str(self.entryCalc3.get())
+
+        if (Calc3 == "f" and Calc2 != "f"):
+            CalcMed = (float(Calc1) + float(Calc2))/2
+
+        elif (Calc3 == "f" and Calc2 == "f"):
+            CalcMed = float(Calc1)
+
+        else:
+            CalcMed = (float(Calc1) + float(Calc2) + float(Calc3)) / 3
 
         self.entryCalcMed.delete(0, tkinter.END)
         self.entryCalcMed.insert(0, str(CalcMed))
 
-        Web01 = float(self.entryWeb01.get())
-        Web02 = float(self.entryWeb02.get())
-        Web03 = float(self.entryWeb03.get())
-        Web0Med = (Web01 + Web02 + Web03) / 3
+        Web01 = str(self.entryWeb01.get())
+        Web02 = str(self.entryWeb02.get())
+        Web03 = str(self.entryWeb03.get())
+
+        if (Web03 == "f" and Web02 != "f"):
+            Web0Med = (float(Web01) + float(Web02))/2
+
+        elif (Web03 == "f" and Web02 == "f"):
+            Web0Med = float(Web01)
+        else:
+            Web0Med = (float(Web01) + float(Web02) + float(Web03)) / 3
 
         self.entryWeb0Med.delete(0, tkinter.END)
         self.entryWeb0Med.insert(0, str(Web0Med))
 
-        LPII1 = float(self.entryLPII1.get())
-        LPII2 = float(self.entryLPII2.get())
-        LPII3 = float(self.entryLPII3.get())
-        LPIIMed = (LPII1 + LPII2 + LPII3) / 3
+        LPII1 = str(self.entryLPII1.get())
+        LPII2 = str(self.entryLPII2.get())
+        LPII3 = str(self.entryLPII3.get())
+
+        if (LPII3 == "f" and LPII2 != "f"):
+            LPIIMed = (float(LPII1) + float(LPII2))/2
+        elif (LPII3 == "f" and LPII2 == "f"):
+            LPIIMed = float(LPII1)
+        else:
+            LPIIMed = (float(LPII1) + float(LPII2) + float(LPII3)) / 3
 
         self.entryLPIIMed.delete(0, tkinter.END)
         self.entryLPIIMed.insert(0, str(LPIIMed))
 
-        Psico1 = float(self.entryPsico1.get())
-        Psico2 = float(self.entryPsico2.get())
-        Psico3 = float(self.entryPsico3.get())
-        PsicoMed = (Psico1 + Psico2 + Psico3) / 3
+        Psico1 = str(self.entryPsico1.get())
+        Psico2 = str(self.entryPsico2.get())
+        Psico3 = str(self.entryPsico3.get())
+
+        if (Psico3 == "f" and Psico2 != "f"):
+            PsicoMed = (float(Psico1) + float(Psico2))/2
+
+        elif (Psico3 == "f" and Psico2 == "f"):
+            PsicoMed = float(Psico1)
+
+        else:
+            PsicoMed = (float(Psico1) + float(Psico2) + float(Psico3)) / 3
 
         self.entryPsicoMed.delete(0, tkinter.END)
         self.entryPsicoMed.insert(0, str(PsicoMed))
@@ -195,6 +239,8 @@ class minhaApp_tk(tkinter.Tk):
 
         self.entryCrAtual.delete(0,tkinter.END)
         self.entryCrAtual.insert(0,str(CrAtual))
+
+
 
 if (__name__ == "__main__"):
     app = minhaApp_tk(None)  # criamos uma aplicação sem nenhum pai, pois é a principal.
