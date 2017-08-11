@@ -13,8 +13,11 @@ class minhaApp_tk(tkinter.Tk):
 
 
     def initialize(self):
+
         self.grid()
+
         #Onde as coisas vão aparecer!
+
         self.labelDiscip = tkinter.Label(self, text="Disciplinas")
         self.labelDiscip.grid(column=0, row=1, sticky="EW")
 
@@ -105,8 +108,8 @@ class minhaApp_tk(tkinter.Tk):
         self.entryWeb03 = tkinter.Entry(self)
         self.entryWeb03.grid(column=6, row=6, sticky="EW")
 
-        self.entryWebMed = tkinter.Entry(self)
-        self.entryWebMed.grid(column=8, row=6, sticky="EW")
+        self.entryWeb0Med = tkinter.Entry(self)
+        self.entryWeb0Med.grid(column=8, row=6, sticky="EW")
 
         self.entryPsico1 = tkinter.Entry(self)
         self.entryPsico1.grid(column=2, row=7, sticky="EW")
@@ -135,8 +138,63 @@ class minhaApp_tk(tkinter.Tk):
         self.entryCrAtual = tkinter.Entry(self)
         self.entryCrAtual.grid(column=6, row=8, sticky="EW")
 
-#    def setOnClickListener(self):
+    def setOnClickListener(self):
 
+        AdmSI1 = float(self.entryAdmSI1.get())
+        AdmSI2 = float(self.entryAdmSI2.get())
+        AdmSI3 = float(self.entryAdmSI3.get())
+        AdmSIMed = (AdmSI1 + AdmSI2 + AdmSI3) / 3
+
+        self.entryAdmSIMed.delete(0, tkinter.END)
+        self.entryAdmSIMed.insert(0, str(AdmSIMed))
+
+        AdmEst1 = str(self.entryAdmEst1.get())
+        AdmEst2 = str(self.entryAdmEst2.get())
+        AdmEst3 = str(self.entryAdmEst3.get())
+
+        AdmEstMed = (float(AdmEst1) + float(AdmEst2) + float(AdmEst3)) / 3
+
+        self.entryAdmEstMed.delete(0,tkinter.END)
+        self.entryAdmEstMed.insert(0, str(AdmEstMed))
+
+        Calc1 = float(self.entryCalc1.get())
+        Calc2 = float(self.entryCalc2.get())
+        Calc3 = float(self.entryCalc3.get())
+        CalcMed = (Calc1 + Calc2 + Calc3) / 3
+
+        self.entryCalcMed.delete(0, tkinter.END)
+        self.entryCalcMed.insert(0, str(CalcMed))
+
+        Web01 = float(self.entryWeb01.get())
+        Web02 = float(self.entryWeb02.get())
+        Web03 = float(self.entryWeb03.get())
+        Web0Med = (Web01 + Web02 + Web03) / 3
+
+        self.entryWeb0Med.delete(0, tkinter.END)
+        self.entryWeb0Med.insert(0, str(Web0Med))
+
+        LPII1 = float(self.entryLPII1.get())
+        LPII2 = float(self.entryLPII2.get())
+        LPII3 = float(self.entryLPII3.get())
+        LPIIMed = (LPII1 + LPII2 + LPII3) / 3
+
+        self.entryLPIIMed.delete(0, tkinter.END)
+        self.entryLPIIMed.insert(0, str(LPIIMed))
+
+        Psico1 = float(self.entryPsico1.get())
+        Psico2 = float(self.entryPsico2.get())
+        Psico3 = float(self.entryPsico3.get())
+        PsicoMed = (Psico1 + Psico2 + Psico3) / 3
+
+        self.entryPsicoMed.delete(0, tkinter.END)
+        self.entryPsicoMed.insert(0, str(PsicoMed))
+
+        CrPassado = str(self.entryCrPassado.get())
+        MediaDisc = (AdmEstMed + AdmSIMed + CalcMed + LPIIMed + Web0Med + PsicoMed) / 6
+        CrAtual = (float(CrPassado) + MediaDisc)/2
+
+        self.entryCrAtual.delete(0,tkinter.END)
+        self.entryCrAtual.insert(0,str(CrAtual))
 
 if (__name__ == "__main__"):
     app = minhaApp_tk(None)  # criamos uma aplicação sem nenhum pai, pois é a principal.
