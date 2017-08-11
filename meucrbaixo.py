@@ -2,10 +2,10 @@
 #Digitado, pensado, xingado e odiado por Coxinha Jr™
 
 
-import tkinter
+import tkinter #Bibilioteca que será usada para a criação da GUI
 
-class minhaApp_tk(tkinter.Tk):
-    def __init__(self, parent):
+class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informações do App
+    def __init__(self, parent): #Função que define a aplicação como aplicação principal
 
         tkinter.Tk.__init__(self, parent)
 
@@ -14,18 +14,19 @@ class minhaApp_tk(tkinter.Tk):
         self.initialize()
 
 
-    def initialize(self):
+    def initialize(self): #Função onde são armazenadas as informações (textos, botões, caixa de texto)
 
-        self.grid()
+        self.grid() #Introduz a classe dentro da GUI
 
-        #Onde as coisas vão aparecer!
-
+        #Texto com Instrução
         self.labelInstruc = tkinter.Label(self, text="(Para notas não obtidas ainda, digite 'f')")
         self.labelInstruc.grid(column=0, row=9, sticky="EW")
 
+        #Texto que indica a coluna 'Disciplinas'
         self.labelDiscip = tkinter.Label(self, text="Disciplinas")
         self.labelDiscip.grid(column=0, row=1, sticky="EW")
 
+        #Textos que indicam as colunas 'Nota' de 1 a 3
         self.labelNota1 = tkinter.Label(self, text="Nota 1")
         self.labelNota1.grid(column=2, row=1, sticky="EW")
 
@@ -35,9 +36,11 @@ class minhaApp_tk(tkinter.Tk):
         self.labelNota3 = tkinter.Label(self, text="Nota 3")
         self.labelNota3.grid(column=6, row=1, sticky="EW")
 
+        #Texto que indica a coluna 'Média'
         self.labelMedia = tkinter.Label(self, text="Média")
         self.labelMedia.grid(column=8, row=1, sticky="EW")
 
+        #Textos que indicam as disciplinas
         self.labelAdmSI = tkinter.Label(self, text="Adm. de Sist. de Informação")
         self.labelAdmSI.grid(column=0, row=3, sticky="EW")
 
@@ -56,6 +59,7 @@ class minhaApp_tk(tkinter.Tk):
         self.labelPsico = tkinter.Label(self, text="Psicologia Aplicada a SI")
         self.labelPsico.grid(column=0, row=7, sticky="EW")
 
+        #Entradas que recebem os valores das notas
         self.entryAdmSI1 = tkinter.Entry(self)
         self.entryAdmSI1.grid(column=2,row=3,sticky="EW")
 
@@ -128,6 +132,7 @@ class minhaApp_tk(tkinter.Tk):
         self.entryPsicoMed = tkinter.Entry(self)
         self.entryPsicoMed.grid(column=8, row=7, sticky="EW")
 
+        #Botão que realiza os cálculos
         self.botaoSee = tkinter.Button(self, text="Calcule",command=self.setOnClickListener)
         self.botaoSee.grid(column=8,row=8,sticky="EW")
 
@@ -143,23 +148,25 @@ class minhaApp_tk(tkinter.Tk):
         self.entryCrAtual = tkinter.Entry(self)
         self.entryCrAtual.grid(column=6, row=8, sticky="EW")
 
-    def setOnClickListener(self):
+    def setOnClickListener(self): #Função que funciona no clique do botão
 
+        #Variáveis pegam os valores dos campos de entrada e transformam em 'strings'
+        #Transformando em strings para realizar o condicional a seguir
         AdmSI1 = str(self.entryAdmSI1.get())
         AdmSI2 = str(self.entryAdmSI2.get())
         AdmSI3 = str(self.entryAdmSI3.get())
 
-        if (AdmSI3 == "f" and AdmSI2 != "f"):
-            AdmSIMed = (float(AdmSI1) + float(AdmSI2)) / 2
+        if (AdmSI3 == "f" and AdmSI2 != "f"): #Aqui o analisa-se se o aluno tem todas as notas ou não
+            AdmSIMed = (float(AdmSI1) + float(AdmSI2)) / 2 #Cálculo da média para duas notas
 
         elif (AdmSI3 == "f" and AdmSI2 == "f" ):
-            AdmSIMed = float(AdmSI1)
+            AdmSIMed = float(AdmSI1) #Cálculo da média para uma nota
 
         else:
-            AdmSIMed = (float(AdmSI1) + float(AdmSI2) + float(AdmSI3)) / 3
+            AdmSIMed = (float(AdmSI1) + float(AdmSI2) + float(AdmSI3)) / 3 #Cálculo da média para três notas
 
-        self.entryAdmSIMed.delete(0, tkinter.END)
-        self.entryAdmSIMed.insert(0, str(AdmSIMed))
+        self.entryAdmSIMed.delete(0, tkinter.END) #Deleta qualquer informação presente no campo do Resultado
+        self.entryAdmSIMed.insert(0, str(AdmSIMed))#Insere a média obtida no campo de resultado
 
         AdmEst1 = str(self.entryAdmEst1.get())
         AdmEst2 = str(self.entryAdmEst2.get())
@@ -238,9 +245,9 @@ class minhaApp_tk(tkinter.Tk):
         self.entryPsicoMed.delete(0, tkinter.END)
         self.entryPsicoMed.insert(0, str(PsicoMed))
 
-        CrPassado = str(self.entryCrPassado.get())
-        MediaDisc = (AdmEstMed + AdmSIMed + CalcMed + LPIIMed + Web0Med + PsicoMed) / 6
-        CrAtual = (float(CrPassado) + MediaDisc)/2
+        CrPassado = str(self.entryCrPassado.get()) #Variável pega o valor do C.R antigo e transforma em 'string'
+        MediaDisc = (AdmEstMed + AdmSIMed + CalcMed + LPIIMed + Web0Med + PsicoMed) / 6 #Cálculo da média de todas as disciplinas
+        CrAtual = (float(CrPassado) + MediaDisc)/2 #Média do C.R passado somado à média das disciplinas
 
         self.entryCrAtual.delete(0,tkinter.END)
         self.entryCrAtual.insert(0,str(CrAtual))
@@ -248,6 +255,6 @@ class minhaApp_tk(tkinter.Tk):
 
 
 if (__name__ == "__main__"):
-    app = minhaApp_tk(None)  # criamos uma aplicação sem nenhum pai, pois é a principal.
-    app.title('Meu C.R baixo!')  # especificamos o título de nossa aplicação
-    app.mainloop()
+    app = minhaApp_tk(None)  #Criamos uma aplicação sem nenhum pai, pois é a principal.
+    app.title('Meu C.R baixo!') #Especificamos o título de nossa aplicação
+    app.mainloop() #Mantém o programa rodando em loop
