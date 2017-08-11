@@ -1,4 +1,6 @@
 #-*- coding:utf-8 -*-
+#Digitado, pensado, xingado e odiado por Coxinha Jr™
+
 
 import tkinter
 
@@ -17,6 +19,9 @@ class minhaApp_tk(tkinter.Tk):
         self.grid()
 
         #Onde as coisas vão aparecer!
+
+        self.labelInstruc = tkinter.Label(self, text="(Para notas não obtidas ainda, digite 'f')")
+        self.labelInstruc.grid(column=0, row=9, sticky="EW")
 
         self.labelDiscip = tkinter.Label(self, text="Disciplinas")
         self.labelDiscip.grid(column=0, row=1, sticky="EW")
