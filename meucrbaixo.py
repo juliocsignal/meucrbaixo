@@ -60,18 +60,6 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         self.labelPsico.grid(column=0, row=7, sticky="EW")
 
         #Entradas que recebem os valores das notas
-        self.entryAdmSI1 = tkinter.Entry(self)
-        self.entryAdmSI1.grid(column=2,row=3,sticky="EW")
-
-        self.entryAdmSI2 = tkinter.Entry(self)
-        self.entryAdmSI2.grid(column=4, row=3, sticky="EW")
-
-        self.entryAdmSI3 = tkinter.Entry(self)
-        self.entryAdmSI3.grid(column=6, row=3, sticky="EW")
-
-        self.entryAdmSIMed = tkinter.Entry(self)
-        self.entryAdmSIMed.grid(column=8, row=3, sticky="EW")
-
         self.entryAdmEst1 = tkinter.Entry(self)
         self.entryAdmEst1.grid(column=2, row=2, sticky="EW")
 
@@ -83,6 +71,18 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
 
         self.entryAdmEstMed = tkinter.Entry(self)
         self.entryAdmEstMed.grid(column=8, row=2, sticky="EW")
+
+        self.entryAdmSI1 = tkinter.Entry(self)
+        self.entryAdmSI1.grid(column=2, row=3, sticky="EW")
+
+        self.entryAdmSI2 = tkinter.Entry(self)
+        self.entryAdmSI2.grid(column=4, row=3, sticky="EW")
+
+        self.entryAdmSI3 = tkinter.Entry(self)
+        self.entryAdmSI3.grid(column=6, row=3, sticky="EW")
+
+        self.entryAdmSIMed = tkinter.Entry(self)
+        self.entryAdmSIMed.grid(column=8, row=3, sticky="EW")
 
         self.entryCalc1 = tkinter.Entry(self)
         self.entryCalc1.grid(column=2, row=4, sticky="EW")
@@ -133,9 +133,6 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         self.entryPsicoMed.grid(column=8, row=7, sticky="EW")
 
         #Botão que realiza os cálculos
-        self.botaoSee = tkinter.Button(self, text="Calcule",command=self.setOnClickListener)
-        self.botaoSee.grid(column=8,row=8,sticky="EW")
-
         self.crPassado = tkinter.Label(self, text="Seu C.R passado era:")
         self.crPassado.grid(column=0, row=8, sticky="EW")
 
@@ -147,6 +144,9 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
 
         self.entryCrAtual = tkinter.Entry(self)
         self.entryCrAtual.grid(column=6, row=8, sticky="EW")
+
+        self.botaoSee = tkinter.Button(self, text="Calcule", command=self.setOnClickListener)
+        self.botaoSee.grid(column=8, row=8, sticky="EW")
 
     def setOnClickListener(self): #Função que funciona no clique do botão
 
