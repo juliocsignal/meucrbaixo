@@ -156,10 +156,10 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         AdmSI2 = str(self.entryAdmSI2.get())
         AdmSI3 = str(self.entryAdmSI3.get())
 
-        if (AdmSI3 == "f" and AdmSI2 != "f"): #Aqui o analisa-se se o aluno tem todas as notas ou não
+        if (AdmSI3 == "" and AdmSI2 != ""): #Aqui o analisa-se se o aluno tem todas as notas ou não
             AdmSIMed = (float(AdmSI1) + float(AdmSI2)) / 2 #Cálculo da média para duas notas
 
-        elif (AdmSI3 == "f" and AdmSI2 == "f" ):
+        elif (AdmSI3 == "f" and AdmSI2 == "" ):
             AdmSIMed = float(AdmSI1) #Cálculo da média para uma nota
 
         else:
@@ -172,10 +172,10 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         AdmEst2 = str(self.entryAdmEst2.get())
         AdmEst3 = str(self.entryAdmEst3.get())
 
-        if (AdmEst3 == "f" and AdmEst2 != "f"):
+        if (AdmEst3 == "" and AdmEst2 != ""):
             AdmEstMed = (float(AdmEst1) + float(AdmEst2))/2
 
-        elif (AdmEst3 == "f" and AdmEst2 == "f"):
+        elif (AdmEst3 == "" and AdmEst2 == ""):
             AdmEstMed = float(AdmEst1)
 
         else:
@@ -188,10 +188,10 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         Calc2 = str(self.entryCalc2.get())
         Calc3 = str(self.entryCalc3.get())
 
-        if (Calc3 == "f" and Calc2 != "f"):
+        if (Calc3 == "" and Calc2 != ""):
             CalcMed = (float(Calc1) + float(Calc2))/2
 
-        elif (Calc3 == "f" and Calc2 == "f"):
+        elif (Calc3 == "" and Calc2 == ""):
             CalcMed = float(Calc1)
 
         else:
@@ -204,10 +204,10 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         Web02 = str(self.entryWeb02.get())
         Web03 = str(self.entryWeb03.get())
 
-        if (Web03 == "f" and Web02 != "f"):
+        if (Web03 == "" and Web02 != ""):
             Web0Med = (float(Web01) + float(Web02))/2
 
-        elif (Web03 == "f" and Web02 == "f"):
+        elif (Web03 == "" and Web02 == ""):
             Web0Med = float(Web01)
         else:
             Web0Med = (float(Web01) + float(Web02) + float(Web03)) / 3
@@ -219,9 +219,9 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         LPII2 = str(self.entryLPII2.get())
         LPII3 = str(self.entryLPII3.get())
 
-        if (LPII3 == "f" and LPII2 != "f"):
+        if (LPII3 == "" and LPII2 != ""):
             LPIIMed = (float(LPII1) + float(LPII2))/2
-        elif (LPII3 == "f" and LPII2 == "f"):
+        elif (LPII3 == "" and LPII2 == ""):
             LPIIMed = float(LPII1)
         else:
             LPIIMed = (float(LPII1) + float(LPII2) + float(LPII3)) / 3
@@ -233,10 +233,10 @@ class minhaApp_tk(tkinter.Tk): #Criação da classe onde estarão as informaçõ
         Psico2 = str(self.entryPsico2.get())
         Psico3 = str(self.entryPsico3.get())
 
-        if (Psico3 == "f" and Psico2 != "f"):
+        if (Psico3 == "" and Psico2 != ""):
             PsicoMed = (float(Psico1) + float(Psico2))/2
 
-        elif (Psico3 == "f" and Psico2 == "f"):
+        elif (Psico3 == "" and Psico2 == ""):
             PsicoMed = float(Psico1)
 
         else:
